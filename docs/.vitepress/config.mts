@@ -9,7 +9,8 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '家', link: '/' },
-      { text: '开始', link: '/get-start' }
+      { text: '开始', link: '/get-start' },
+      { text: 'API文档', link: '/api-docs' }
     ],
 
     sidebar: [
