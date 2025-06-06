@@ -5,24 +5,26 @@ export default defineConfig({
   title: "FGate",
   description: "FGate API Docs",
   themeConfig: {
+    logo: '/logo.svg',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: '家', link: '/' },
+      { text: '开始', link: '/get-start' }
     ],
 
     sidebar: [
       {
-        text: 'Examples',
+        text: '目录',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: '开始', link: '/get-start' },
+          { text: 'API文档', link: '/api-docs' }
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+      { icon: 'github', link: 'https://github.com/JohnRichard4096/FGateDoc' }
+    ],
+    
   }
 })

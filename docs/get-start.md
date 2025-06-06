@@ -1,6 +1,4 @@
-# Markdown Extension Examples
-
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+# FGateDOC仍然在施工中！现在您所看到的是VitePress的built-in文档！
 
 ## Syntax Highlighting
 
