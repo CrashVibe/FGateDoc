@@ -2,48 +2,90 @@
 outline: deep
 ---
 
-# Runtime API Examples
+# 开始
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+## 概述
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
+本页面旨在介绍FGate API接口，为最新版本的FGate进行介绍。
 
-```md
-<script setup>
-import { useData } from 'vitepress'
+## 节点通讯
 
-const { theme, page, frontmatter } = useData()
-</script>
+### 通用部分
 
-## Results
+我们的设计分为两部分：
 
-### Theme Data
-<pre>{{ theme }}</pre>
+1. 响应（服务端->客户端或客户端->服务端）
 
-### Page Data
-<pre>{{ page }}</pre>
+    ```json
+    {
+        "id":101, 
+        "result":{
+            "status":"string",
+            "message":"string",
+            "code":0,
+            }
+    }
+    ```
 
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
+    说明
+
+    | 字段名(.表示节点) | 类型 | 说明 |
+    | ------ | ---- | ---- |
+    | id | int | 响应id |
+    | result | object | 结果（一定实现了`status`字段与`message`字段） |
+    | result.status | string | 状态（分为`success`、`error`） |
+    | result.message | string | 信息 |
+    | result.code | int | 错误码（如果状态为`error`，则一定有code字段） |
+
+2. 请求（客户端->服务器）
+
+    ```json
+    {
+        "id":101, 
+        "method":"string", 
+        "params":{}
+    }
+    ```
+
+    说明
+
+    | 字段 | 类型 | 说明 |
+    |:----|:----|:----|
+    | id | int | 请求ID，结果返回时的标识 |
+    | method | string | 请求方法 |
+    | params | object | 请求参数 |
+
+---
+
+### 节点连接
+
+对于MCServer侧的插件（即FGate Client），管理面板（即FGate Nexus），我们采取从Client to Server的**正向WebSocket**进行通讯。
+
+当您连接到服务器时，您需要在请求头加入Authorization字段，值为Bearer {您从Server创建的Token（节点Token与Nexus的API Token不同）}。
+
+```json
+{"Authorization":"Bearer <your token>"}
 ```
 
-<script setup>
-import { useData } from 'vitepress'
+当您成功与Server建立连接时，您会收到一个**欢迎消息**（ServerHelloPacket）。
 
-const { site, theme, page, frontmatter } = useData()
-</script>
+```json
+{
+    "id":101, 
+    "result":{
+        "status":"success",
+        "message":"验证成功，欢迎[SessionID]",
+        "protocol_version":1 
+    }  
+}
+```
 
-## Results
+字段说明
 
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+|字段(.表示节点)|类型|描述|
+|:---|:---|:---|
+|id|int|响应ID,用于区分请求|
+|result|object|结果对象|
+|result.status|string|结果状态|
+|result.message|string|结果信息|
+|result.protocol_version|int|协议版本|
