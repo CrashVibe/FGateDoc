@@ -19,7 +19,7 @@ outline: deep
     ```json
     {
         "jsonrpc": "2.0",
-        "id":101, 
+        "id":"101", 
         "result":{
             "status":"string",
             "message":"string",
@@ -33,7 +33,7 @@ outline: deep
     | 字段名(.表示节点) | 类型 | 说明 |
     | ------ | ---- | ---- |
     | jsonrpc | string | 固定值，表示jsonrpc版本号，我们不支持1.0，仅支持2.0 |
-    | id | int | 响应id |
+    | id | string | 响应id |
     | result | object | 结果（一定实现了`status`字段与`message`字段） |
     | result.status | string | 状态（分为`success`、`error`） |
     | result.message | string | 信息 |
@@ -44,7 +44,7 @@ outline: deep
     ```json
     {   
         "jsonrpc": "2.0",
-        "id":101, 
+        "id":"101", 
         "method":"string", 
         "params":{}
     }
@@ -55,7 +55,7 @@ outline: deep
     | 字段 | 类型 | 说明 |
     |:----|:----|:----|
     | jsonrpc | string | 版本号，如上文 |
-    | id | int | 请求ID，结果返回时的标识 |
+    | id | string | 请求ID，结果返回时的标识 |
     | method | string | 请求方法 |
     | params | object | 请求参数 |
 
