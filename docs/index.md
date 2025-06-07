@@ -3,8 +3,8 @@ layout: home
 
 hero:
   name: "FGate"
-  text: "FGate API Docs"
-  tagline: FGATE
+  text: "FGate Docs"
+  tagline: FGATE 现代化的Minecraft服务器管理解决方案
   actions:
     - theme: brand
       text: 开始

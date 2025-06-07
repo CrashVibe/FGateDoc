@@ -4,13 +4,15 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "FGate",
   description: "FGate API Docs",
+  head: [
+    ['link', { rel: 'icon', href: '/FGate.png' }]
+  ],
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/logo.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '家', link: '/' },
       { text: '开始', link: '/get-start' },
-      { text: 'API文档', link: '/api-docs' }
     ],
 
     sidebar: [
@@ -18,7 +20,6 @@ export default defineConfig({
         text: '目录',
         items: [
           { text: '开始', link: '/get-start' },
-          { text: 'API文档', link: '/api-docs' }
         ]
       }
     ],
