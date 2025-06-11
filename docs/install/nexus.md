@@ -9,9 +9,9 @@
   - `Node.js` 18+
   - `Bun`（推荐）或 npm/yarn
 - **运行环境**：
-  - `Linux`🐧: x64 架构
-  - `macOS`🍎: x64 架构（Intel 或 Apple Silicon with Rosetta）
-  - `Windows`🚜: x64 架构
+  - `Linux`🐧: x86_64/arm64 架构
+  - `macOS`🍎: x86_64/arm64 架构（Intel 或 Apple Silicon with Rosetta）
+  - `Windows`🚜: x86_64 架构
 
 ### 本地运行
 
