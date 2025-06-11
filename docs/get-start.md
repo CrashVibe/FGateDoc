@@ -17,4 +17,4 @@ Client端是安装在`Minecraft服务器侧`的，连接到**单独部署**的`N
 
 ### 部署
 
-请前往下一页阅读[部署文档](/install)。
+请前往下一页阅读[部署文档](install/index.md)。

@@ -2,8 +2,11 @@ import { defineConfig } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 // https://vitepress.dev/reference/site-config
 export default withMermaid({
+  ignoreDeadLinks: [
+    "http://localhost:3000"
+  ],
   title: "FGate",
-  description: "FGate API Docs",
+  description: "FlowGate Docs",
   head: [
     ['link', { rel: 'icon', href: '/FGate.png' }]
   ],
