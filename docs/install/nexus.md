@@ -136,7 +136,7 @@ bun run db:migrate
 1. **克隆项目**
 
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/CrashVibe/FGATE-Nexus
     cd FGATE-Nexus
     ```
 
@@ -162,9 +162,3 @@ bun run db:migrate
 - [Naive UI](https://www.naiveui.com/) - UI 组件库文档
 - [Bun 文档](https://bun.sh/docs) - Bun 运行时文档
 - [OneBot 标准](https://onebot.dev/) - OneBot 协议规范
-
----
-
-## 许可证
-
-本项目基于 GPL 许可证开源。
