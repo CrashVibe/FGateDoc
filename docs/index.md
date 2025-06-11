@@ -2,23 +2,22 @@
 layout: home
 
 hero:
-  name: "FGate"
+  name: "Flow Gate"
   text: "FGate Docs"
-  tagline: FGATE 现代化的Minecraft服务器管理解决方案
+  tagline: 现代化 Minecraft 服务器集群管理方案
   actions:
     - theme: brand
-      text: 开始
+      text: 快速开始
       link: /get-start
     - theme: alt
-      text: API Docs
-      link: /api-docs
+      text: 部署
+      link: /install/index.md
 
 features:
-  - title: 现代化
-    details: 我们使用了Nust.js构建面板，使用Vue3和TypeScript开发。
-  - title: 集群控制
-    details: 我们支持多个Minecraft服务器集群的控制管理，可以使用rcon进行控制
-  - title: 可扩展性
-    details: 我们提供了完整的API接口，也提供了适配器接口，您可以将其接入到任何地方。
+  - title: 现代技术栈
+    details: 基于 Nuxt.js 构建响应式管理面板，采用 Vue3 + TypeScript 实现前端交互
+  - title: 集群化管控
+    details: 支持跨服务器集群的集中式管理，通过 RCON 协议实现远程服务器控制
+  - title: 扩展能力
+    details: 提供完整的 Websocket 式 RESTFUL 的 API 接口及插件适配器体系，支持灵活接入第三方监控/告警系统
 ---
-
