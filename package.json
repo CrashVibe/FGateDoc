@@ -5,6 +5,12 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "markdown-it-mermaid": "^0.2.5",
     "vitepress": "^1.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "mermaid": "^11.6.0",
+    "vitepress-plugin-mermaid": "^2.0.17"
   }
 }
