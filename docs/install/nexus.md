@@ -156,6 +156,8 @@ bun run db:migrate
 
     打开浏览器访问 `http://localhost:3000`
 
+或者直接使用我们在GitHub Actions提供的二进制构建[Link](https://github.com/CrashVibe/FGATE-Nexus/actions/workflows/release.yml)
+
 ## 📖 相关链接
 
 - [Nuxt 3 文档](https://nuxt.com/docs) - 了解 Nuxt 3 框架
