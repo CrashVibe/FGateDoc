@@ -1,36 +1,81 @@
-# Flow Gate
+# FGateNexus - 跨平台游戏聊天桥接解决方案
 
-## 新一代Minecraft服务器管理解决方案
+![项目展示](/FGate-Show.png)
 
-## 快速开始
+## 概述
 
-### 架构介绍
+FGateNexus 是一款专业的 Minecraft 服务器聊天桥接管理系统，致力于打破游戏与社交平台间的通信壁垒。通过高效稳定的技术架构，实现 Minecraft 服务器与主流聊天平台（如 QQ）间的无缝消息同步，为游戏社区提供一体化的跨平台交流体验。
 
-```mermaid
-graph LR;
-  A[FGate-Client] -->|Websocket| B[FGate-Nexus]
+## 核心功能
+
+### 🎮 多服务器统一管理
+
+支持同时连接并管理多个 Minecraft 服务器，提供集中化的控制界面。
+
+### 💬 多平台消息互通
+
+基于模块化适配器架构，目前已支持 OneBot 协议（QQ 机器人），具备扩展更多聊天平台的能力。
+
+### 🔗 双向消息桥接
+
+实现游戏内聊天与外部社交平台的双向实时消息转发，保持社区交流的连续性。
+
+### 👥 智能账号绑定系统
+
+提供安全的玩家身份验证机制，支持 Minecraft 玩家与社交平台账号的绑定与解绑操作。
+
+### ⚡ 远程指令执行
+
+通过授权机制，允许从聊天平台安全地向 Minecraft 服务器发送管理指令。
+
+### 🔔 实时事件通知
+
+将服务器重要事件（玩家加入/离开、成就达成、系统警报等）自动推送到指定聊天频道。
+
+### 🔒 多层次安全防护
+
+集成密码验证与双因素认证（2FA）系统，确保系统访问与操作的安全性。
+
+## 技术架构
+
+### 前端实现
+
+- **框架**: Nuxt 4 (基于 Vue 3 组合式 API)
+- **语言**: TypeScript
+- **样式**: Tailwind CSS 实用优先框架
+- **组件**: Naïve UI 现代组件库
+
+### 后端实现
+
+- **运行时**: Bun 高性能 JavaScript 运行时
+- **数据层**: Drizzle ORM 与 SQLite 数据库
+- **聊天框架**: Koishi 可扩展机器人框架
+- **通信协议**: WebSocket 实时双向通信
+
+### 项目结构
+
+```
+├── app/           # 前端应用界面与组件
+├── server/        # 后端API与服务逻辑
+├── shared/        # 通用类型定义与工具函数
+└── migrations/    # 数据库结构迁移管理
 ```
 
-Client端是安装在`Minecraft服务器侧`的，连接到**单独部署**的`Nexus管理端`，通过Nexus暴露的端口进行`正向WebSocket`通讯，内容遵循[JSONRPC-2.0协议](https://www.jsonrpc.org/specification)。
+## 工作原理
 
-### 特性
+1. **连接建立**: 通过 WebSocket 与 Minecraft 服务器插件建立稳定连接
+2. **适配器初始化**: 加载配置的聊天平台适配器并建立会话
+3. **消息路由**: 智能识别和处理跨平台消息流向
+4. **状态同步**: 实时维护各平台间的状态一致性
 
-#### [Flow Gate Nexus](https://github.com/CrashVibe/FGATE-Nexus/)
+## 产品特色
 
-一个基于 Nuxt 3 的全栈应用，专为Minecraft服务器集群管理设计，内置Onebot适配器实现，支持打包为独立二进制文件，实现"打开即用"的分发体验。
+- 🌐 **跨平台兼容**: 全面支持 Windows、Linux、macOS 操作系统
+- 🎨 **现代化界面**: 深色主题设计与流畅的用户体验
+- 📱 **响应式布局**: 适配桌面与移动设备访问
+- 🔐 **数据本地化**: 所有数据处理均在用户掌控范围内
+- 🧩 **模块化设计**: 易于扩展新功能和适配新平台
 
-- 🚀 **独立可执行文件** - 基于 Bun 打包，无需安装 Node.js
-- 🎮 **游戏服务器管理** - 支持 Minecraft 等游戏服务器的监控和管理
-- 🤖 **OneBot 适配器** - 集成聊天机器人适配器，支持多平台消息处理
-- 🌍 **跨平台支持** - Linux, macOS, Windows
-- ⚡ **完整功能** - WebSocket 实时通信, SQLite 数据库, RESTful API
-- 🎨 **现代 UI** - 基于 Naive UI 的响应式界面
-- 📦 **一键分发** - 完整的构建和分发脚本
-
-#### [Flow Gate Client](https://github.com/CrashVibe/FGATE-Client)
-
-Minecraft服务器侧的FlowGate客户端，基于Java开发，与Nexus开放的WebSocket接口进行通信。
-
-### 部署
-
-请前往下一页阅读[部署文档](install/index.md)。
+::: tip 开源生态
+FGateNexus 采用开放架构设计，欢迎社区开发者参与适配器开发和功能扩展
+:::
