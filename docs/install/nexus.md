@@ -1,166 +1,30 @@
-# FGATE-Nexus
+# FGATE Nexus
 
-## 🛠️ 开发环境
+> A Minecraft Server Chat Bridge
 
-### 系统要求
+## 说明
 
-- Node.js 18+
-- Bun (推荐) 或 npm/yarn
+- 本项目采用 [Nuxt 4](https://nuxt.com/) + [TypeScript](https://www.typescriptlang.org/) + [Naïve UI](https://www.naiveui.com/)
+开发
+- 需要配合 [FGATE Client](https://github.com/CrashVibe/FGateClient) 一起使用
+- 跨平台支持，适用于 Windows、Linux、macOS 等操作系统
+- 仅对移动端做了基础适配，不保证功能全部可用
+  > 所以说，建议在 PC 上使用，但如果你想在手机上使用，还是可以的。如果你发现了移动端的 bug 或问题，也欢迎提交 issue
+- 我们以深色主题为主
+  > 如果你遇到了浅色或深色主题问题或有更好的界面建议，欢迎提交 issue 或 PR
 
-### 安装依赖
+## 快速开始
 
-```bash
-bun install
-```
+[Github Release](https://github.com/CrashVibe/FGateNexus/releases/latest) 下最新的版本直接使用
 
-### 开发服务器
+如要更新，直接覆盖即可
 
-启动开发服务器在 `http://localhost:3000`:
+## 隐私与安全
 
-```bash
-# 使用 Bun 运行时（推荐）
-bun --bun dev
+- 不会上传或收集用户数据，所有数据都在本地服务器处理
+- 如未来要集成第三方服务 / API，会提前告知并提供配置选项
+  > 当然我们都会尽量避免使用第三方服务，除非必要，除非很好用，嘻嘻~
 
-# 或者使用标准方式
-bun run dev
-```
+## 许可证
 
-> **注意**: 由于项目使用了 Bun 特定的功能，建议使用 `bun --bun dev` 命令来确保最佳兼容性。
-
-## 📦 构建和分发
-
-### 快速构建（当前平台）
-
-```bash
-# 构建应用
-bun run build
-
-# 编译为二进制文件（macOS）
-bun run build:mac
-
-# 编译为二进制文件（Linux）
-bun run build:linux
-
-# 编译为二进制文件（Windows）
-bun run build:win
-```
-
-### 构建所有平台
-
-```bash
-# 构建所有平台的二进制文件
-bun run build:all
-```
-
-## 🚀 使用二进制文件
-
-构建完成后，在 `dist/` 目录中：
-
-## 📁 项目结构
-
-```
-FGATE-Nexus/
-├── components/          # Vue 组件
-│   ├── Card/           # 卡片组件（服务器、适配器等）
-│   └── Config/         # 配置组件
-├── pages/              # 页面路由
-│   ├── adapters/       # 适配器管理页面
-│   └── servers/        # 服务器管理页面
-├── server/             # 服务端代码
-│   ├── api/            # API 路由
-│   ├── database/       # 数据库配置和 Schema
-│   ├── handlers/       # 业务处理器
-│   ├── plugins/        # 服务器插件
-│   └── utils/          # 工具类
-│       ├── adapters/   # 适配器管理
-│       └── client/     # 客户端连接管理
-├── composables/        # Vue 组合式函数
-├── assets/             # 静态资源
-└── migrations/         # 数据库迁移文件
-```
-
-## 🎯 主要功能
-
-### 🎮 游戏服务器管理
-
-- **服务器监控**: 实时监控游戏服务器状态和性能
-- **玩家管理**: 查看在线玩家信息和统计
-- **配置管理**: 可视化配置服务器参数
-- **WebSocket 通信**: 实时双向数据传输
-
-### 🤖 OneBot 适配器
-
-- **多平台支持**: 支持各种聊天平台的 OneBot 协议
-- **适配器管理**: 动态添加、配置和管理适配器
-- **消息处理**: 实时消息接收和处理
-- **认证机制**: 支持 Access Token 安全认证
-
-### 📊 数据管理
-
-- **SQLite 数据库**: 轻量级本地数据存储
-- **Drizzle ORM**: 类型安全的数据库操作
-- **自动迁移**: 数据库结构自动更新
-
-## 🔧 开发指南
-
-### 数据库操作
-
-```bash
-# 生成数据库迁移文件
-bun run db:generate
-
-# 执行数据库迁移
-bun run db:migrate
-```
-
-### 代码规范
-
-项目使用 ESLint 和 Prettier 确保代码质量：
-
-## 📋 系统要求
-
-### 开发环境
-
-- **Node.js**: 18+
-- **Bun**: 最新版本（推荐）
-- **操作系统**: macOS, Linux, Windows
-
-### 运行环境（二进制文件）
-
-- **Linux**: x64 和 ARM 架构
-- **macOS**: x64 和 ARM 架构（Intel 与 Apple Silicon）
-- **Windows**: x64 架构
-
-## 🚀 快速开始
-
-1. **克隆项目**
-
-    ```bash
-    git clone https://github.com/CrashVibe/FGATE-Nexus
-    cd FGATE-Nexus
-    ```
-
-2. **安装依赖**
-
-    ```bash
-    bun install
-    ```
-
-3. **启动开发服务器**
-
-    ```bash
-    bun --bun dev
-    ```
-
-4. **访问应用**
-
-    打开浏览器访问 `http://localhost:3000`
-
-或者直接使用我们在GitHub Actions提供的二进制构建[Link](https://github.com/CrashVibe/FGATE-Nexus/actions/workflows/release.yml)
-
-## 📖 相关链接
-
-- [Nuxt 3 文档](https://nuxt.com/docs) - 了解 Nuxt 3 框架
-- [Naive UI](https://www.naiveui.com/) - UI 组件库文档
-- [Bun 文档](https://bun.sh/docs) - Bun 运行时文档
-- [OneBot 标准](https://onebot.dev/) - OneBot 协议规范
+本项目基于 GPLv3 协议开源。
