@@ -8,11 +8,7 @@ export default withMermaid({
     themeConfig: {
         logo: "/logo.png",
         // https://vitepress.dev/reference/default-theme-config
-        nav: [
-            { text: "家", link: "/" },
-            { text: "首页", link: "/get-start" },
-            { text: "安装", link: "/install" }
-        ],
+        nav: [{ text: "开始", link: "/get-start" }],
 
         sidebar: [
             {

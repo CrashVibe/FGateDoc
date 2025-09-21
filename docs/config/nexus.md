@@ -23,5 +23,5 @@
 | ----------- | ------------------------------------- |
 | koishi.host | Koishi 服务监听地址                   |
 | koishi.port | Koishi 服务监听端口                   |
-| nitro.host  | Nitro 服务监听地址(Client 连接的地址) |
-| nitro.port  | Nitro 服务监听端口(Client 连接的端口) |
+| nitro.host  | Nitro 服务监听地址 (Client 连接的地址) |
+| nitro.port  | Nitro 服务监听端口 (Client 连接的端口) |
