@@ -2,17 +2,16 @@
 layout: home
 
 hero:
-    name: "Flow Gate"
-    text: "FGate Docs"
+    name: "FlowGate"
     image:
         src: /logo.png
-        alt: Flow Gate
+        alt: FlowGate
 
     tagline: 跨平台的 Minecraft 服务器聊天桥接工具
     actions:
         - theme: brand
           text: 快速开始
-          link: /get-start
+          link: /guide/intro
         - theme: alt
           text: GitHub
           link: https://github.com/CrashVibe/FGateNexus
