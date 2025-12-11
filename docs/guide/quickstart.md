@@ -64,12 +64,12 @@ chmod +x ./FGateNexus-mac-x64
 - 控制台会打印监听地址与端口（用于打开 Web 控制台）。
 
 ```log
-Listening on http://127.0.0.1:3000/...
-[I] server server listening at http://127.0.0.1:5140
+Listening on http://xx.xx.xx.xx:xxxx...
+INFO [xx:xx:xx]: Koishi 服务启动 http://xx.xx.xx.xx:xxxx
 ```
 
-`Listening on http://xxx` 是 **Web 控制台** 和 **与插件连接** 的地址<br>
-`[I] server server listening at http://xxx` 是关于适配器的连接地址。
+`Listening on http://xx.xx.xx.xx:xxxx` 是 **Web 控制台** 和 **与插件连接** 的地址<br>
+`INFO [xx:xx:xx]: Koishi 服务启动 http://xx.xx.xx.xx:xxxx` 是关于适配器的连接地址。
 
 - 使用浏览器访问日志中提示的 **Web 控制台** 进入管理界面。
 
